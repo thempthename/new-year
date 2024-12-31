@@ -171,12 +171,15 @@ const Fireworks: React.FC = () => {
     });
 
     // Timelines
-    const timelineText = new mojs.Timeline({ repeat: 2018 })
-      .add(underline)
-      .play();
+    const timelineText = new mojs.Timeline({ repeat: 2018 }) //+
+      .add(underline) //+
+      .play(); //+
+
     const timeline = new mojs.Timeline({ repeat: 2018 }).add([fw1, fw2]).play();
 
     // Cleanup
+    console.log(timelineText, timeline);
+
     return () => {
       document.removeEventListener("click", handleClick);
     };
