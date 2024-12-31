@@ -66,3 +66,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+body {
+  user-select: none; /* Запрещает выделение текста */
+  -webkit-user-select: none; /* Для браузеров на WebKit */
+  -ms-user-select: none; /* Для IE */
+}

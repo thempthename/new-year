@@ -1,7 +1,47 @@
+import React from "react";
 import "./App.css";
 import Fireworks from "./components/Fireworks";
 
-function App() {
+const App: React.FC = () => {
+  if (typeof window !== "undefined") {
+    window.console.log = function () {};
+    window.console.error = function () {};
+    window.console.warn = function () {};
+    window.console.info = function () {};
+  }
+  if (typeof window !== "undefined") {
+    window.addEventListener("keydown", function (event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I")
+      ) {
+        event.preventDefault();
+      }
+    });
+  }
+
+  React.useEffect(() => {
+    const handleContextMenu = (event: MouseEvent) => {
+      event.preventDefault();
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (
+        event.ctrlKey &&
+        (event.key === "c" || event.key === "x" || event.key === "u")
+      ) {
+        event.preventDefault();
+      }
+    };
+
+    document.addEventListener("contextmenu", handleContextMenu);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
   return (
     <>
       <div>
@@ -35,6 +75,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
