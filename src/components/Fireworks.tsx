@@ -184,7 +184,7 @@ const Fireworks: React.FC = () => {
       document.removeEventListener("click", handleClick);
     };
   }, []);
-  //
+
   return <></>;
 };
 
