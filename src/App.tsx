@@ -45,9 +45,7 @@ const App: React.FC = () => {
   return (
     <>
       <div>
-        <h1 id="title">
-          Happy New Year! <br /> My school
-        </h1>
+        <h1 id="title">Happy New Year!</h1>
         <div className="stars"></div>
         <svg
           className="mountains mountains--layer1"
