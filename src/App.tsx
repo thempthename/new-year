@@ -6,7 +6,7 @@ function App() {
     <>
       <div>
         <h1 id="title">
-          Happy New Year! <br /> My school{" "}
+          Happy New Year! <br /> My school
         </h1>
         <div className="stars"></div>
         <svg
